@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="ISO-8859-1">
+<link rel="icon" type="image/x-icon" href="imagens/musculo-png-2.png" />
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<title>Loucademia</title>
+</head>
+<body>
+	<header>
+		<img src="imagens/Loucademia_Logotipo.png">
+		<nav>
+			<div>
+				<a href="novoAluno.html">Novo Aluno</a><br> 
+				<a href="pesquisaDeAluno.html">Pesquisa de	aluno</a><br> 
+				<a href="controleDeAcesso.html">Controle de acesso</a><br> 
+				<a href="relatoriosDeEntradaSaida.html">Relatório de Entrada e Saída</a><br> 
+				<a href="relatoriosDeSituacoes.html">Relatório de Situações</a><br>
+			</div>
+		</nav>
+	</header>
+
+
+    <h1>Pesquisa de aluno</h1>
+
+    <div id="InfoMessage">(SUCESSO OU ERRO)</div>
+    <br>
+
+    <form>
+        <fieldset>
+            <legend>Parâmetros de pesquisa:</legend>
+
+            <label for="id">ID:</label><br>
+            <input type="number" name="id" id="id"><br>
+
+            <label for="nome">Name:</label><br>
+            <input type="text" name="nome" id="nome"><br>
+
+            <label for="rg">RG:</label><br>
+            <input type="number" name="rg" id="rg"><br>
+
+            <label for="telefoneDDD">Telefone:</label><br>
+            <input type="tel" name="telefoneDDD" id="telefoneDDD">
+            <input type="tel" name="telefoneNumero" id="telefoneNumero">
+
+        </fieldset>
+        <br>
+
+        <input type="submit" value="Pesquisar">
+
+    </form>
+
+	<table>
+		<tr>
+			<th>ID</th>
+			<th>Nome</th>
+			<th>RG</th>
+			<th>E-mail</th>
+			<th>Situação</th>
+			<th>Ação</th>
+		</tr>
+		
+		<tr>
+			<td>1</td>
+			<td>Chico</td>
+			<td>23232323232</td>
+			<td>sdsdsds@gdsdf.cpxc</td>
+			<td>ativo</td>
+			<td>
+				<input type="button" value="Editar">
+				<input type="button" value="Excluir">
+			</td>
+		</tr>
+	</table>
+</body>
+
+</html>
