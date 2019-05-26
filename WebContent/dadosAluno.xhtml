@@ -70,7 +70,7 @@
 			</select><br/>
 			 
 			 <label	for="cep">CEP:</label> <br/>
-			 	<input type="text" name="cep" id="cep"/><br/>
+			 	<input type="text" name="cep" jsf:value="#{alunoBean.aluno.endereco.cep}" id="cep"/><br/>
 
 		</fieldset>
 		<br/>
@@ -79,23 +79,24 @@
 			<legend>Contato: </legend>
 
 			<label for="email">E-mail</label> <br/>
-				<input type="email" name="email"/><br/>
+				<input type="email" jsf:value="#{alunoBean.aluno.email}" name="email" id="email"/><br/>
 				
 			<label for="telefoneCelularDDD">Telefone celular:</label> <br/>
-				<input type="tel" name="telefoneCelularDDD" id="telefoneCelularDDD"/>
-				<input type="tel" name="telefoneCelularNumero" id="telefoneCelularNumero"/><br/>
+				<input type="tel" name="telefoneCelularDDD" jsf:value="#{alunoBean.aluno.telefone.dddCelular}" id="telefoneCelularDDD"/>&#160;
+				<input type="tel" name="telefoneCelularNumero" jsf:value="#{alunoBean.aluno.telefone.numeroCelular}" id="telefoneCelularNumero"/><br/>
 				
 			<label for="telefoneFixoDDD">Telefone Fixo:</label> <br/>
-				<input type="tel" name="telefoneFixoDDD" id="telefoneFixoDDD"/>
-				<input type="tel" name="telefoneFixoNumero" id="telefoneFixoNumero"/>
+				<input type="tel" name="telefoneFixoDDD" jsf:value="#{alunoBean.aluno.telefone.dddFixo}" id="telefoneFixoDDD"/>&#160;
+				<input type="tel" name="telefoneFixoNumero" jsf:value="#{alunoBean.aluno.telefone.numeroFixo}" id="telefoneFixoNumero"/>
 				
 		</fieldset>
 		<br/>
+		
+		<input type="submit" value="Gravar" jsf:action="#{alunoBean.gravar}" />
+		<input type="button" value="Relatórios alunos"/> 
 
 	</form>
 		
-		<input type="submit" value="Gravar"/>
-		<input type="button" value="Relatórios alunos"/> 
 	
 	</ui:define>
 </ui:composition>

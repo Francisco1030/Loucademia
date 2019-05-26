@@ -12,6 +12,11 @@ import br.com.loucademia.domain.aluno.Aluno;
 public class AlunoBean implements Serializable{
 
 	private Aluno aluno = new Aluno();
+	
+	public String gravar() {
+		System.err.println("ALUNO ==>" + aluno);
+		return null;
+	}
 
 	public Aluno getAluno() {
 		return aluno;
