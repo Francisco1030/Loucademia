@@ -21,7 +21,8 @@ public class AlunoRepository {
 	}
 	
 	public Aluno findByMatricula(String matricula) {
-		return em.find(Aluno.class, matricula);
+		 return em.find(Aluno.class, matricula);
+
 	}
 	
 	public void delete(String matricula) {
