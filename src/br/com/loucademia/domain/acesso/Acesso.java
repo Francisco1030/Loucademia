@@ -16,29 +16,53 @@ import br.com.loucademia.domain.aluno.Aluno;
 
 @Entity
 @Table(name = "ENTRADAS_SAIDAS")
-public class Acesso implements Serializable{
+public class Acesso implements Serializable {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY) //ID AUTOINCREMENT
+	@GeneratedValue(strategy = GenerationType.IDENTITY) // ID AUTOINCREMENT
 	@Column(name = "ID", nullable = false)
 	private Integer id;
-	
+
 	@ManyToOne
 	@JoinColumn(name = "ALUNO_ID", nullable = false)
 	private Aluno aluno;
-	
+
 	@Column(name = "ENTRADA", nullable = false)
 	private LocalDateTime entrada;
-	
+
 	@Column(name = "SAIDA", nullable = true)
 	private LocalDateTime saida;
-	
-	
+
+	public boolean isEntradaSaidaPreechidas() {
+		if (entrada != null && saida != null) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	public TipoAcesso registroAcesso() {
+		LocalDateTime now = LocalDateTime.now();
+		TipoAcesso tipoAcesso;
+
+		if (entrada == null) {
+			entrada = now;
+			tipoAcesso = TipoAcesso.Entrada;
+		} else if (saida == null) {
+			saida = now;
+			tipoAcesso = TipoAcesso.Saida;
+		} else {
+			tipoAcesso = null;
+		}
+
+		return tipoAcesso;
+	}
+
 	@Override
 	public String toString() {
 		return "Acesso [id=" + id + ", aluno=" + aluno + ", entrada=" + entrada + ", saida=" + saida + "]";
 	}
-	
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -67,26 +91,33 @@ public class Acesso implements Serializable{
 	public Integer getId() {
 		return id;
 	}
+
 	public void setId(Integer id) {
 		this.id = id;
 	}
+
 	public Aluno getAluno() {
 		return aluno;
 	}
+
 	public void setAluno(Aluno aluno) {
 		this.aluno = aluno;
 	}
+
 	public LocalDateTime getEntrada() {
 		return entrada;
 	}
+
 	public void setEntrada(LocalDateTime entrada) {
 		this.entrada = entrada;
 	}
+
 	public LocalDateTime getSaida() {
 		return saida;
 	}
+
 	public void setSaida(LocalDateTime saida) {
 		this.saida = saida;
 	}
-	
+
 }
