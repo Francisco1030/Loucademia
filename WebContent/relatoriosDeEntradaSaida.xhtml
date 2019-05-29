@@ -10,6 +10,11 @@
 <ui:composition template="layout.xhtml">
 
 	<ui:define name="conteudo">
+	
+		<f:metadata>
+			<f:viewParam name="matricula" value="#{relatorioEntradaSaidaBean.matricula}" />
+			<f:viewAction action="#{relatorioEntradaSaidaBean.carregarAluno}" />
+		</f:metadata>
 
 		<h1>Relatorios de Entrada e Saida</h1>
 
