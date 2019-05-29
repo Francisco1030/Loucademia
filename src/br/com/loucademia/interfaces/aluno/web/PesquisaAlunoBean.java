@@ -26,6 +26,9 @@ public class PesquisaAlunoBean implements Serializable {
 	@Inject
 	private FacesContext facesContext;
 
+	@Inject
+	@RequestParameterMap
+	private Map<String, String> requestParamsMap;
 	
 	private String matricula;
 	private String nome;
@@ -33,6 +36,18 @@ public class PesquisaAlunoBean implements Serializable {
 	private Integer telefone;
 
 	private List<Aluno> alunos;
+	
+	public void check() {
+		String clear = requestParamsMap.get("clear");
+		
+		if (clear != null && Boolean.valueOf(clear)) {
+			matricula = null;
+			nome = null;
+			rg = null;
+			telefone = null;
+			alunos = null;
+		}
+	}
 
 	public String pesquisar() {
 		try {

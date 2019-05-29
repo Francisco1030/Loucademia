@@ -9,6 +9,7 @@
 
 	
 	<ui:composition template="layout.xhtml">
+		<ui:param name="title" value="#{alunoBean.titulo}" />
 	 // Responsavel por pegar a url
 	  <f:metadata>
 		<f:viewParam name="matricula" value="#{alunoBean.matricula}" />
@@ -16,14 +17,7 @@
 	  </f:metadata>
 	  
 		<ui:define name="conteudo">
-			<h1>#{alunoBean.titulo}</h1>
-
-	<h:panelGroup rendered="#{!facesContext.messageList.isEmpty()}">
-		<div id="InfoMessage">
-			<h:messages />
-		</div>
-	</h:panelGroup>
-	<br/>
+		
 
 	<form jsf:id="form">
 		<input type="hidden" jsf:value="#{alunoBean.aluno.matricula}" />
@@ -148,7 +142,9 @@
 		<br/>
 		
 		<input type="submit" value="Gravar" jsf:action="#{alunoBean.gravar}" />&#160;
-		<input type="button" value="Relatórios de Entrada e saída alunos" jsf:outcome="relatoriosDeEntradaSaida?matricula=#{alunoBean.aluno.matricula}"/> 
+		<input type="button" value="Relatórios de Entrada e saída alunos" 
+				jsf:outcome="relatoriosDeEntradaSaida?matricula=#{alunoBean.aluno.matricula}"
+				jsf:rendered="#{alunoBean.matricula != null}"/> 
 
 	</form>
 		

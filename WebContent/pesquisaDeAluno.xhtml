@@ -9,16 +9,13 @@
 
 	
 	<ui:composition template="layout.xhtml">
-
+		<ui:param name="title" value="Pesquisa de aluno" />
 	<ui:define name="conteudo">
-    	<h1>Pesquisa de aluno</h1>
-
-	<h:panelGroup rendered="#{!facesContext.messageList.isEmpty()}">
-		<div id="InfoMessage">
-			<h:messages />
-		</div>
-	</h:panelGroup>
-
+		<f:metadata>
+			<f:viewAction action="#{pesquisaAlunoBean.check}" />
+		</f:metadata>
+		
+	
     <form jsf:id="form">
         <fieldset>
             <legend>Parâmetros de pesquisa:</legend>

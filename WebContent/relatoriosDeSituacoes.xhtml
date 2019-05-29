@@ -8,17 +8,11 @@
 
 
 <ui:composition template="layout.xhtml">
-
+	<ui:param name="title" value="Relatório de situação" />
 	<ui:define name="conteudo">
-
-		<h1>Relatório de situações</h1>
-
-		<h:panelGroup rendered="#{!facesContext.messageList.isEmpty()}">
-			<div id="InfoMessage">
-				<h:messages />
-			</div>
-		</h:panelGroup>
-		<br />
+		<f:metadata>
+			<f:viewAction action="#{relatorioSituacoesBean.check}" />
+		</f:metadata>
 
 		<form jsf:id="form">
 			<fieldset>

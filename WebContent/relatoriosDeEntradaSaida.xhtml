@@ -8,7 +8,7 @@
 
 
 <ui:composition template="layout.xhtml">
-
+	<ui:param name="title" value="Relatório de entrda e saída" />
 	<ui:define name="conteudo">
 	
 		<f:metadata>
@@ -16,14 +16,6 @@
 			<f:viewAction action="#{relatorioEntradaSaidaBean.carregarAluno}" />
 		</f:metadata>
 
-		<h1>Relatorios de Entrada e Saida</h1>
-
-		<h:panelGroup rendered="#{!facesContext.messageList.isEmpty()}">
-			<div id="InfoMessage">
-				<h:messages />
-			</div>
-		</h:panelGroup>
-		<br />
 		<form jsf:id="form">
 			<fieldset>
 				<legend>Parâmetros de Entrada e Saidas:</legend>
