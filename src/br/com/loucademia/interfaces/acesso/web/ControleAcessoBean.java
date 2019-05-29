@@ -8,9 +8,9 @@ import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
-import javax.validation.ValidationException;
 
 import br.com.loucademia.application.service.AcessoService;
+import br.com.loucademia.application.util.ValidationException;
 import br.com.loucademia.domain.acesso.TipoAcesso;
 
 @Named

@@ -11,6 +11,7 @@ import br.com.loucademia.application.util.Validation;
 import br.com.loucademia.application.util.ValidationException;
 import br.com.loucademia.domain.aluno.Aluno;
 import br.com.loucademia.domain.aluno.AlunoRepository;
+import br.com.loucademia.domain.aluno.Aluno.Situacao;
 
 @Stateless
 public class AlunoService {
@@ -52,6 +53,11 @@ public class AlunoService {
 			throw new ValidationException("Pelo menos um campo de ver preechido");
 		}
 		return alunoRepository.listaAlunos(matricula, nome, rg, telefone);
+	}
+	
+	public List<Aluno> listaSituacaoAlunos(Situacao situacao){
+		Validation.assertNotEmpty(situacao);
+		return alunoRepository.listaSituacaoAlunos(situacao);
 	}
 
 }
