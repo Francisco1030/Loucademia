@@ -12,7 +12,7 @@ import br.com.loucademia.domain.aluno.Aluno;
 import br.com.loucademia.domain.aluno.Aluno.Situacao;
 
 @Named
-@SessionScoped
+@SessionScoped //Para quando usa tabela com dados que tem link para outras paginas
 public class RelatorioSituacoesBean implements Serializable{
 
 	@EJB
